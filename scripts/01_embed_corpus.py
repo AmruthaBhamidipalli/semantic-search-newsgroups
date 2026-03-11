@@ -1,25 +1,3 @@
-"""
-Part 1 — Embedding & Vector Database Setup
-==========================================
-Reads the 20 Newsgroups dataset from LOCAL files (data/20_newsgroups/)
-
-Design Decisions:
------------------
-EMBEDDING MODEL: all-MiniLM-L6-v2
-  - 384-dim, fast, trained on 1B+ sentence pairs, good for news text
-  - Runs fully locally, no API key needed
-
-VECTOR STORE: ChromaDB
-  - Local persistent storage, no server needed
-  - cluster_id stored per doc enables fast filtered lookup in Part 3
-
-CLEANING:
-  - Remove email headers (From/Subject/Organization) — author noise
-  - Remove quoted reply lines — off-topic content bleed
-  - Drop posts under 50 chars — no semantic signal
-  - Remove non-ASCII — encoding noise from old Usenet posts
-"""
-
 import re
 import os
 import sys
