@@ -1,25 +1,3 @@
-"""
-Part 2 - Fuzzy Clustering with Gaussian Mixture Models
-=======================================================
-Design Decisions:
------------------
-WHY GMM over K-Means?
-  K-Means forces one cluster per document. A post about "gun legislation"
-  belongs to BOTH politics AND firearms. GMM outputs P(cluster_k | doc)
-  for every k — a true probability distribution. That is the fuzzy
-  assignment this task requires.
-
-WHY PCA before GMM?
-  384-D embeddings have too many parameters for GMM covariance estimation.
-  PCA to 64-D retains ~85% variance while making covariance matrices
-  well-conditioned. Standard practice for GMM on sentence embeddings.
-
-WHY BIC for K selection?
-  BIC penalises complexity — rewards fit but subtracts for parameters.
-  The K where BIC stops dropping (elbow) is the best explanation of data.
-  We never hardcode K=20 just because there are 20 labels.
-"""
-
 print("Starting Part 2 - Fuzzy Clustering...")
 print("Importing libraries...")
 
