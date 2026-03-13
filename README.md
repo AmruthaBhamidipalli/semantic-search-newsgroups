@@ -79,7 +79,7 @@ Response:
 ```json
 {
   "query": "Tell me about space exploration",
-  "cache_hit": true,
+  "cache_hit": false,
   "matched_query": null,
   "similarity_score": null,
   "result": [...],
@@ -163,3 +163,4 @@ docker run -p 8000:8000 semantic-search
 ```
 
 ---
+
